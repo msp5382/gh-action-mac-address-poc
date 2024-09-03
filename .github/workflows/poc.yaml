@@ -1,0 +1,21 @@
+name: Poc
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: ci-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout
+      - name: change mac address
+        run: python3 changemac.py
+      - name: test
+        run: echo ifconfig
