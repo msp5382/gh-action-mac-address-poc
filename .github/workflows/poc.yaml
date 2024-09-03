@@ -18,4 +18,4 @@ jobs:
       - name: change mac address
         run: python3 changemac.py
       - name: test
-        run: echo ifconfig
+        run: ifconfig
