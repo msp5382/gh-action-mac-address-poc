@@ -16,6 +16,6 @@ jobs:
       - uses: actions/checkout@v3
         name: Checkout
       - name: change mac address
-        run: python3 changemac.py
+        run: python3 changemac.py -i eth0 -m 00:11:22:33:44:55
       - name: test
         run: ifconfig
